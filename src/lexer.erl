@@ -47,7 +47,7 @@ comment (Lexer=#lexer{}) ->
 
 %% skip all whitespace and comments
 whitespace (Lexer=#lexer{}) ->
-    parsec:skip(parsec:choice([comment(Lexer),?SPACE])).
+    parsec:skip(parsec:choice([comment(Lexer),?SPACE,?NEWLINE])).
 
 %% parse a lexeme
 lexeme (Lexer=#lexer{},P) ->
